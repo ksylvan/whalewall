@@ -1,4 +1,3 @@
-version: "3"
 services:
   client:
     container_name: client
@@ -25,7 +24,7 @@ services:
           - network: default
             container: server
             proto: tcp
-            dst_ports: 
+            dst_ports:
               - 756
           - proto: tcp
             ips:

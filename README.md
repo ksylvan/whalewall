@@ -72,10 +72,9 @@ allows the whalewall container to modify host firewall rules.
 Example Docker compose file:
 
 ```yaml
-version: "3"
 services:
   whalewall:
-    cap_add: 
+    cap_add:
       - NET_ADMIN
     image: ghcr.io/capnspacehook/whalewall
     network_mode: host
@@ -192,14 +191,14 @@ This is merely intended to be an example of whalewall rules, not how to setup Mi
 mapped_ports:
   # controls traffic from localhost
   localhost:
-    # required; allow traffic from localhost or not 
+    # required; allow traffic from localhost or not
     allow: false
     # optional; log new inbound traffic that this rule will match
     log_prefix: ""
     # optional; settings that allow you to filter traffic further if desired
     verdict:
       # optional; a chain to jump to after matching traffic. This applies to new and established
-      # inbound traffic, and established outbound traffic 
+      # inbound traffic, and established outbound traffic
       chain: ""
       # optional; the userspace nfqueue to send new outbound packets to
       queue: 0
@@ -220,7 +219,7 @@ mapped_ports:
     # optional; settings that allow you to filter traffic further if desired
     verdict:
       # optional; a chain to jump to after matching traffic. This applies to new and established
-      # inbound traffic, and established outbound traffic 
+      # inbound traffic, and established outbound traffic
       chain: ""
       # optional; the userspace nfqueue to send new outbound packets to
       queue: 0
@@ -234,7 +233,7 @@ mapped_ports:
 output:
     # optional; log new outbound traffic that this rule will match
   - log_prefix: ""
-    # optional; a Docker network traffic will be allowed out of. If unset, will default to all 
+    # optional; a Docker network traffic will be allowed out of. If unset, will default to all
     # networks the container is a member of. Required if 'container' is set
     network: ""
     # optional; a list of IP addresses, CIDRs, or ranges of IP addresses to allow traffic to
@@ -253,7 +252,7 @@ output:
     # optional; settings that allow you to filter traffic further if desired
     verdict:
       # optional; a chain to jump to after matching traffic. This applies to new and established
-      # inbound traffic, and established outbound traffic 
+      # inbound traffic, and established outbound traffic
       chain: ""
       # optional; the userspace nfqueue to send new outbound packets to
       queue: 0

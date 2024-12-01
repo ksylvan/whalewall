@@ -12,7 +12,6 @@ linters:
     - errcheck
     - errchkjson
     - errorlint
-    - execinquery
     - forcetypeassert
     - gci
     - gocheckcompilerdirectives
